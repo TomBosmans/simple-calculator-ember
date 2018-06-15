@@ -1,11 +1,12 @@
 import Service from '@ember/service';
 
 export default Service.extend({
-  list: [],
+  list: null,
   result: 0,
 
   init() {
     this._super(...arguments);
+    this.set('list', []);
   },
 
   add(number) {
