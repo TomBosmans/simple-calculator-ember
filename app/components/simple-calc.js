@@ -13,13 +13,13 @@ export default Component.extend({
       var number = parseInt($input.val());
       var calculator = this.get('calculator');
 
-      if(Number.isInteger(number)) {
-	calculator.add(number);
-	$input.val('');
-	$result.html(calculator.get('result'));
-	$list.append($("<li></li>").text(number));
+      if (Number.isInteger(number)) {
+        calculator.add(number);
+        $input.val('');
+        $result.html(calculator.get('result'));
+        $list.append($("<li></li>").text(number));
       } else {
-	alert('not a number');
+        alert('not a number');
       }
     }
   }
