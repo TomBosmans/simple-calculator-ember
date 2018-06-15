@@ -15,3 +15,9 @@ body {
 .page {
   width: 320px;
 }
+
+.calc__result,
+.calc__form input {
+  text-align: right;
+}
+
