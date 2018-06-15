@@ -3,7 +3,7 @@ import { inject as service } from '@ember/service';
 import $ from 'jquery'
 
 export default Component.extend({
-  calculator:  service('calculator'),
+  calculator: service('calculator'),
 
   actions: {
     addNumber() {
