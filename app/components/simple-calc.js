@@ -14,8 +14,8 @@ export default Component.extend({
     addNumber() {
       var newNumber = parseInt(this.get('number'));
       if (Number.isInteger(newNumber)) {
-	this.get('numbers').pushObject(newNumber);
-	this.set('number', null);
+        this.get('numbers').pushObject(newNumber);
+        this.set('number', null);
       } else {
         alert('not a number');
       }
