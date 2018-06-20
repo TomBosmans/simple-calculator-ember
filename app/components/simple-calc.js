@@ -1,8 +1,14 @@
 import Component from '@ember/component';
+import { sum } from '@ember/object/computed';
 
 export default Component.extend({
-  numbers: [],
-  result: 0,
+  numbers: null,
+  result: sum('numbers'),
+
+  init() {
+    this._super(...arguments);
+    this.set('numbers', []);
+  },
 
   actions: {
     addNumber() {
@@ -10,16 +16,9 @@ export default Component.extend({
       if (Number.isInteger(newNumber)) {
 	this.get('numbers').pushObject(newNumber);
 	this.set('number', null);
-	this.calculate();
       } else {
         alert('not a number');
       }
     },
   },
-
-  calculate() {
-    const sumReducer = (a, b) => a + b;
-    var sum = this.get('numbers').reduce(sumReducer, 0);
-    this.set('result', sum);
-  }
 });
