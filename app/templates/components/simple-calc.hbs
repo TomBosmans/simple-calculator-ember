@@ -1,27 +1,28 @@
-<h5>{{title}}</h5>
-
 <div class="calc">
   <!-- The sum of all valid numbers -->
   <div class="calc__result col s12 card-panel">
-    <span class="js-result">0</span>
+    <span>{{result}}</span>
   </div>
 
   <!-- Input -->
   <form class="calc__form col s12 card-panel">
     <div class="input-field col s8">
-      <input class="js-input" type="number">
+      {{input type="number" value=number}}
     </div>
 
     <div class="input-field col s4">
       <button {{action "addNumber"}} class="btn waves-effect waves-light" type="submit" name="action">
-	Add
+        Add
       </button>
     </div>
   </form>
 
   <!-- List of all valid inputs -->
   <div class="calc__list col s12 card-panel">
-    <ul class="js-list">
+    <ul>
+      {{#each numbers as |number|}}
+        <li>{{number}}</li>
+      {{/each}}
     </ul>
   </div>
 </div>
